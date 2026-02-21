@@ -1,353 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuan Xu - Academic Website</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --bg-color: #fff;
-            --section-bg: #f8f9fa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: var(--bg-color);
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        header .title {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        header .affiliation {
-            font-size: 1.1rem;
-            opacity: 0.85;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--section-bg);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--section-bg);
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            border-bottom: 3px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        /* About */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .profile-photo {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        /* Research Interests */
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .interest-tag {
-            background: var(--accent-color);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-        }
-
-        /* Publications */
-        .publication {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .publication h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .publication .authors {
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .publication .journal {
-            font-style: italic;
-            color: var(--accent-color);
-        }
-
-        /* Contact */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-item .icon {
-            font-size: 1.5rem;
-        }
-
-        .contact-item a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-        }
-    </style>
+    <title>Yuan (Hope) Xu - Portfolio</title>
+    <!-- Google Fonts: Inter and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>Yuan Xu</h1>
-            <p class="title">PhD Candidate</p>
-            <p class="affiliation">Your University | Your Department</p>
-        </div>
-    </header>
+    <div class="background-effects">
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Yuan <span>Xu</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Awards</a></li>
             </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <!-- Replace with your photo -->
-                <img src="profile.jpg" alt="Yuan Xu" class="profile-photo" onerror="this.style.display='none'">
-                <div class="about-text">
-                    <p>
-                        Hello! I'm Yuan Xu, a PhD candidate at [Your University]. My research focuses on 
-                        [brief description of your research area]. I'm passionate about solving complex 
-                        problems and contributing to the advancement of knowledge in my field.
-                    </p>
-                    <p>
-                        Before joining [Your University], I completed my [previous degree] at [Previous Institution].
-                        My academic journey has been driven by curiosity and a desire to make meaningful 
-                        contributions to [your field].
-                    </p>
-                    <p>
-                        When I'm not researching, you can find me [hobbies/interests]. I believe in maintaining 
-                        a healthy work-life balance and finding inspiration in diverse experiences.
-                    </p>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero fade-in">
+            <div class="hero-content">
+                <h1 class="gradient-text">Yuan (Hope) Xu / 许愿</h1>
+                <h2 class="subtitle">Ph.D. Student @ Information Hub, CMA Thrust, HKUST(GZ)</h2>
+                <div class="hero-description">
+                    <p>I am a passionate researcher and developer focused on next-generation <strong>AI-driven interface
+                            generation</strong>, HCI, and human-robot interaction. I bridge the gap between complex AI
+                        models and intuitive user experiences.</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="mailto:mawxuanxuan@gmail.com" class="social-btn" aria-label="Email"><i
+                            class="fas fa-envelope"></i> Email</a>
+                    <a href="https://github.com/Xuan0211" target="_blank" class="social-btn" aria-label="GitHub"><i
+                            class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Research Interests -->
-    <section id="research">
-        <div class="container">
-            <h2>Research Interests</h2>
-            <div class="interests">
-                <span class="interest-tag">Research Area 1</span>
-                <span class="interest-tag">Research Area 2</span>
-                <span class="interest-tag">Research Area 3</span>
-                <span class="interest-tag">Research Area 4</span>
-                <span class="interest-tag">Research Area 5</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications">
-        <div class="container">
-            <h2>Publications</h2>
-            
-            <div class="publication">
-                <h3>[Paper Title 1]</h3>
-                <p class="authors"><strong>Yuan Xu</strong>, Co-author Name, Advisor Name</p>
-                <p class="journal">Journal Name, Year</p>
-                <p><a href="#">[PDF]</a> <a href="#">[DOI]</a></p>
+        <!-- About & Education Section -->
+        <section id="about" class="section fade-in">
+            <div class="section-header">
+                <h2 class="gradient-text-alt">Education</h2>
             </div>
 
-            <div class="publication">
-                <h3>[Paper Title 2]</h3>
-                <p class="authors">Co-author Name, <strong>Yuan Xu</strong>, Advisor Name</p>
-                <p class="journal">Conference Name, Year</p>
-                <p><a href="#">[PDF]</a> <a href="#">[DOI]</a></p>
-            </div>
-
-            <div class="publication">
-                <h3>[Paper Title 3]</h3>
-                <p class="authors"><strong>Yuan Xu</strong>, Advisor Name</p>
-                <p class="journal">Journal Name, Year</p>
-                <p><a href="#">[PDF]</a> <a href="#">[DOI]</a></p>
-            </div>
-
-            <p style="margin-top: 20px;">
-                <a href="https://scholar.google.com/" target="_blank" style="color: var(--accent-color);">
-                    → See more on Google Scholar
-                </a>
-            </p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="icon">📧</span>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="mailto:your.email@university.edu">your.email@university.edu</a>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <h3>Central South University</h3>
+                        <div class="meta text-secondary">
+                            <span><i class="fas fa-map-marker-alt"></i> Changsha, China</span>
+                            <span><i class="fas fa-calendar-alt"></i> 2022 – Jun. 2025</span>
+                        </div>
+                        <h4>B.Eng. in Computer Science and Technology</h4>
+                        <p><strong>Excellent Engineer Education Program</strong></p>
+                        <p class="small-text">Initially enrolled in Information & Computational Science, School of
+                            Mathematics and Statistics (2021-2022). Was selected for the Excellent Engineer Program
+                            based on academic excellence.</p>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <span class="icon">🏛️</span>
-                    <div>
-                        <strong>Office</strong><br>
-                        Building Name, Room Number<br>
-                        University Address
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <span class="icon">🔗</span>
-                    <div>
-                        <strong>Links</strong><br>
-                        <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> | 
-                        <a href="https://github.com/" target="_blank">GitHub</a> | 
-                        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <h3>The Hong Kong University of Science and Technology (Guangzhou)</h3>
+                        <div class="meta text-secondary">
+                            <span><i class="fas fa-map-marker-alt"></i> Guangzhou, China</span>
+                            <span><i class="fas fa-calendar-alt"></i> Jan. 2026 – Present</span>
+                        </div>
+                        <h4>Ph.D. Student in Computational Media and Arts (CMA), Information Hub</h4>
+                        <p>Advisor: <strong>Prof. Xin TONG</strong></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-header reveal">
+                <h2 class="gradient-text-alt">Experience</h2>
+            </div>
+
+            <h3 class="subsection-title reveal">Research Experience</h3>
+            <div class="experience-grid">
+                <!-- ARK Lab -->
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>ARK Lab, HKUST(GZ)</h3>
+                            <p class="position">Research Assistant</p>
+                            <p class="advisor">Advisor: Prof. Xin TONG</p>
+                        </div>
+                        <span class="date tag">Jan 2025 - Present</span>
+                    </div>
+                    <p>Spearheading research into next-generation <strong>AI-driven interface generation</strong>,
+                        developing unified methodologies for GUI, spatial computing, and Human-Robot Interaction (HRI)
+                        applications.</p>
+                </div>
+
+                <!-- Tsinghua -->
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>Pervasive HCI Lab, Tsinghua University</h3>
+                            <p class="position">Research Assistant</p>
+                            <p class="advisor">Advisor: Prof. Chun YU; Mentor: Dr. Tian HUANG</p>
+                        </div>
+                        <span class="date tag">Mar 2024 - Dec 2024</span>
+                    </div>
+                    <p>Pioneered the generation of <strong>cognition-adaptive voice interfaces</strong>, building models
+                        that dynamically adjust interaction patterns based on the user's real-time cognitive workload.
+                    </p>
+                </div>
+
+                <!-- Zhejiang -->
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>D3 Lab, Zhejiang University</h3>
+                            <p class="position">Research Intern</p>
+                            <p class="advisor">Advisor: Prof. Liuqing CHEN</p>
+                        </div>
+                        <span class="date tag">2024</span>
+                    </div>
+                    <p>Explored the application of <strong>generative AI to augment the creative process</strong>,
+                        developing novel tools to support designers during the ideation phase.</p>
+                </div>
+
+                <!-- CSU -->
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>Data Visual Analysis Team, CSU</h3>
+                            <p class="position">Undergraduate Researcher</p>
+                            <p class="advisor">Advisor: Prof. Jiazhi XIA</p>
+                        </div>
+                        <span class="date tag">2022 - 2023</span>
+                    </div>
+                    <p>Built a foundational understanding of data-driven interaction through a prospective study on
+                        temporal network analysis, focusing on hierarchical analysis and graph visualization mining.</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title reveal mt-4">Industry Experience</h3>
+            <div class="experience-grid">
+                <!-- Tencent -->
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>Tencent Music Entertainment Group</h3>
+                            <p class="position">Product Manager Intern, QQ Music</p>
+                        </div>
+                        <span class="date tag">Jan 2024 - Mar 2024</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Conducted prospective research on AIGC-driven playlist generation, covering user research,
+                            requirements definition, prototype testing, and technical implementation strategies (LoRA,
+                            Stable Diffusion, LLMs).</li>
+                    </ul>
+                </div>
+
+                <!-- Kingsoft -->
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>Kingsoft Seasun Games, Seed Lab</h3>
+                            <p class="position">Game Development Intern</p>
+                        </div>
+                        <span class="date tag">Jul 2023 - Aug 2023</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Designed user interaction experiences and created interactive animations for new game
+                            features.</li>
+                        <li>Developed gameplay mechanics using Unity and C#, focusing on camera scheduling and rendering
+                            pipelines.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section">
+            <div class="section-header reveal">
+                <h2 class="gradient-text-alt">Publications</h2>
+            </div>
+
+            <div class="publication-list">
+
+                <div class="card pub-card reveal">
+                    <div class="pub-award"><i class="fas fa-award text-gold"></i> ACM CHI Honorable Mention Award</div>
+                    <h3 class="pub-title">I-Card: A Generative AI-Supported Intelligent Design Method Card Deck</h3>
+                    <p class="pub-authors">Liuqing Chen, Wengteng Cheang, Zhaojun Jiang, <strong>Yuan Xu</strong>, Zebin
+                        Cai, et al.</p>
+                    <p class="pub-venue">CHI 2025</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.1145/3706598.3713934" target="_blank" class="link-btn"><i
+                                class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> Led the end-to-end technical execution, from system
+                        architecture design to full-stack implementation.
+                    </div>
+                </div>
+
+                <div class="card pub-card reveal">
+                    <h3 class="pub-title">DuetUI: A Bidirectional Context Loop for Human-Agent Co-Generation of
+                        Task-Oriented Interfaces</h3>
+                    <p class="pub-authors"><strong>Yuan Xu</strong>, Shaowen Xiang, Yizhi Song, Ruoting Sun, and Xin
+                        Tong.</p>
+                    <p class="pub-venue">CHI 2026</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.48550/arXiv.2504.13684" target="_blank" class="link-btn"><i
+                                class="fas fa-external-link-alt"></i> arXiv</a>
+                    </div>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> First author; responsible for the entire research lifecycle
+                        from ideation, system implementation, user studies, to manuscript writing.
+                    </div>
+                </div>
+
+                <div class="card pub-card reveal">
+                    <h3 class="pub-title">How Do We Research Human-Robot Interaction in the Age of Large Language
+                        Models? A Systematic Review</h3>
+                    <p class="pub-authors">Yufeng Wang*, <strong>Yuan Xu*</strong>, Anastasia Nikolova, et al. (*Equal
+                        contribution)</p>
+                    <p class="pub-venue">CHI 2026</p>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2602.15063" target="_blank" class="link-btn"><i
+                                class="fas fa-external-link-alt"></i> arXiv</a>
+                    </div>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> Co-first author; proposed the initial idea, defined the
+                        paper's framework, and led the literature analysis.
+                    </div>
+                </div>
+
+                <div class="card pub-card reveal">
+                    <h3 class="pub-title">Investigating Cognition-Adaptive Design for Voice User Interfaces</h3>
+                    <p class="pub-authors">Tian Huang, <strong>Yuan Xu</strong>, Chen Yu, Wenge Shi, et al.</p>
+                    <p class="pub-venue">Under Review (Submitted to CHI '26)</p>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> Initiated core ideas, developed the complete system, and
+                        conducted all user experiments.
+                    </div>
+                </div>
+
+                <div class="card pub-card reveal">
+                    <h3 class="pub-title">MemoryLib: A Human-AI Collaborative Approach to Support Personalized Memory
+                        Meaning-Making Process</h3>
+                    <p class="pub-authors">Xiangrong Zhu, Jingwei Sun, <strong>Yuan Xu</strong>, Huanyi Wan, et al.</p>
+                    <p class="pub-venue">Under Review (Submitted to CHI '26)</p>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> Contributed to the early-stage concept formation and the
+                        fundamental interaction design.
+                    </div>
+                </div>
+
+                <div class="card pub-card reveal">
+                    <h3 class="pub-title">Intelligent Interaction Strategies for Context-Aware Cognitive Augmentation
+                    </h3>
+                    <p class="pub-authors">Xiangrong Zhu, <strong>Yuan Xu</strong>, Tianjian Liu, Jingwei Sun, Yu Zhang,
+                        and Xin Tong.</p>
+                    <p class="pub-venue">CHI 2025 Workshop</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.48550/arXiv.2504.13684" target="_blank" class="link-btn"><i
+                                class="fas fa-external-link-alt"></i> arXiv</a>
+                    </div>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> Designed and executed the user experiments and co-authored the
+                        results section.
+                    </div>
+                </div>
+
+                <div class="card pub-card reveal">
+                    <h3 class="pub-title">端智能推理加速技术综述 (A Survey on Edge AI Inference Acceleration Technologies)</h3>
+                    <p class="pub-authors">晋睿章, 婷婷龙, 德宇张, <strong>许愿 (Yuan Xu)</strong>, 炬任, 尧学张.</p>
+                    <p class="pub-venue">电子学报 (Acta Electronica Sinica), 2025</p>
+                    <div class="pub-links">
+                        <a href="https://doi.org/10.12263/DZXB.20240691" target="_blank" class="link-btn"><i
+                                class="fas fa-external-link-alt"></i> DOI</a>
+                    </div>
+                    <div class="pub-contribution">
+                        <strong>My Contribution:</strong> Conducted comprehensive literature research and co-authored
+                        several sections of the manuscript.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header reveal">
+                <h2 class="gradient-text-alt">Selected Projects</h2>
+            </div>
+
+            <div class="project-grid">
+
+                <div class="card project-card reveal">
+                    <div class="project-year">2025</div>
+                    <h3>IlluminMural</h3>
+                    <p class="project-role text-secondary">Research Contributor, AI Models</p>
+                    <p class="project-desc">An Interactive Narrative System for Dunhuang Murals. Developed the core
+                        multimodal AI (VLM + LLM) and a three-agent architecture to power an interactive narrative
+                        system for interpreting Dunhuang murals.</p>
+                </div>
+
+                <div class="card project-card reveal">
+                    <div class="project-year">2024</div>
+                    <h3>DigitalMyself</h3>
+                    <p class="project-role text-secondary">Sole Developer</p>
+                    <p class="project-desc">A Personal AI Chatbot. Engineered a personal AI chatbot by fine-tuning
+                        ChatGLM-6B with a custom RAG pipeline on 30GB+ of private chat logs and deployed it on Alibaba
+                        Cloud.</p>
+                    <div class="project-links mt-3">
+                        <a href="https://github.com/Xuan0211/DigitalMyself" target="_blank" class="link-btn"><i
+                                class="fab fa-github"></i> GitHub</a>
+                    </div>
+                </div>
+
+                <div class="card project-card reveal">
+                    <div class="project-year">2023</div>
+                    <h3>QingCLoud</h3>
+                    <p class="project-role text-secondary">Project Lead</p>
+                    <p class="project-desc">AI-Powered Health Monitoring Platform. Led the end-to-end development of an
+                        AI health platform, including a predictive ML model using smart insole data and a suite of
+                        multi-platform applications.</p>
+                    <div class="project-links mt-3">
+                        <a href="qingcloud.html" class="link-btn"><i class="fas fa-arrow-right"></i> Details</a>
+                    </div>
+                </div>
+
+                <div class="card project-card reveal">
+                    <div class="project-year">2023</div>
+                    <h3>筑语书 (Book of Construction)</h3>
+                    <p class="project-role text-secondary">Game Designer & Developer</p>
+                    <p class="project-desc">Co-designed and developed an award-winning puzzle game demo with a unique
+                        pop-up book mechanic to visualize the history of Chinese architecture.</p>
+                    <div class="project-award mt-2"><i class="fas fa-trophy text-gold"></i> Best Creative Game DEMO
+                        Award (Kingsoft SEED Camp)</div>
+                    <div class="project-links mt-3">
+                        <a href="book-of-construction.html" class="link-btn"><i class="fas fa-arrow-right"></i>
+                            Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Awards Section -->
+        <section id="skills" class="section">
+            <div class="section-header reveal">
+                <h2 class="gradient-text-alt">Honors & Awards</h2>
+            </div>
+
+            <div class="skills-awards-container">
+                <div class="card reveal awards-block" style="grid-column: 1 / -1;">
+                    <ul class="award-list">
+                        <li>
+                            <div class="award-title">China International College Students' Innovation Competition</div>
+                            <div class="award-meta text-secondary">National Finalist, Main Track (Top 0.05%) <span
+                                    class="award-date">Jan 2024</span></div>
+                        </li>
+                        <li>
+                            <div class="award-title">Cross-Strait, HK & Macao Computer Innovation Finals</div>
+                            <div class="award-meta text-secondary">First Prize (Rank 1, Top 0.05%) <span
+                                    class="award-date">Jul 2023</span></div>
+                        </li>
+                        <li>
+                            <div class="award-title">16th National University Student Software Innovation Competition
+                            </div>
+                            <div class="award-meta text-secondary">National Second Prize & Most Innovative Work Award
+                                <span class="award-date">Jun 2023</span></div>
+                        </li>
+                        <li>
+                            <div class="award-title">14th "Zhengda Cup" National Market Survey and Analysis Competition
+                            </div>
+                            <div class="award-meta text-secondary">First Prize, Hunan Province <span
+                                    class="award-date">Apr 2024</span></div>
+                        </li>
+                        <li>
+                            <div class="award-title">National University Student Mathematical Modeling Competition</div>
+                            <div class="award-meta text-secondary">Third Prize, Hunan Province <span
+                                    class="award-date">2023</span></div>
+                        </li>
+                        <li class="mt-3">
+                            <strong>Other Technical Achievements</strong>
+                            <div class="award-meta text-secondary mt-1">CCF-CSP Score: 240 (Ranking: Top 9% of 191,785
+                                participants)</div>
+                            <div class="award-meta text-secondary">NOIP (High School): Second Prize, Zhejiang Province
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Section -->
+        <section id="service" class="section pb-large">
+            <div class="section-header reveal">
+                <h2 class="gradient-text-alt">Service</h2>
+            </div>
+
+            <div class="experience-grid">
+                <div class="card experience-card reveal">
+                    <div class="card-header">
+                        <div>
+                            <h3>GBA HCI Pre-CHI 2025</h3>
+                            <p class="position">Student Volunteer & Session Host</p>
+                        </div>
+                        <span class="date tag">2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="card reveal awards-block">
+            <h3><i class="fas fa-medal text-gradient"></i> Honors & Awards</h3>
+            <ul class="award-list">
+                <li>
+                    <div class="award-title">China International College Students' Innovation Competition</div>
+                    <div class="award-meta text-secondary">National Finalist, Main Track (Top 0.05%) <span
+                            class="award-date">Jan 2024</span></div>
+                </li>
+                <li>
+                    <div class="award-title">Cross-Strait, HK & Macao Computer Innovation Finals</div>
+                    <div class="award-meta text-secondary">First Prize (Rank 1, Top 0.05%) <span class="award-date">Jul
+                            2023</span></div>
+                </li>
+                <li>
+                    <div class="award-title">16th National University Student Software Innovation Competition</div>
+                    <div class="award-meta text-secondary">National Second Prize & Most Innovative Work Award <span
+                            class="award-date">Jun 2023</span></div>
+                </li>
+                <li>
+                    <div class="award-title">14th "Zhengda Cup" National Market Survey and Analysis Competition</div>
+                    <div class="award-meta text-secondary">First Prize, Hunan Province <span class="award-date">Apr
+                            2024</span></div>
+                </li>
+                <li>
+                    <div class="award-title">National University Student Mathematical Modeling Competition</div>
+                    <div class="award-meta text-secondary">Third Prize, Hunan Province <span
+                            class="award-date">2023</span></div>
+                </li>
+                <li class="mt-3">
+                    <strong>Other Technical Achievements</strong>
+                    <div class="award-meta text-secondary mt-1">CCF-CSP Score: 240 (Ranking: Top 9% of 191,785
+                        participants)</div>
+                    <div class="award-meta text-secondary">NOIP (High School): Second Prize, Zhejiang Province</div>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </section>
+    </main>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Yuan Xu. Last updated: February 2026</p>
+        <div class="footer-content">
+            <p>&copy; 2026 Yuan (Hope) Xu. Built with <i class="fas fa-heart text-gradient" style="margin: 0 4px;"></i>
+                for the future.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
